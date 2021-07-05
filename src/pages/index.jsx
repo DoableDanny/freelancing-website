@@ -1,15 +1,12 @@
 import React from "react"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import Layout from "../components/Layout"
 import Hero from "../components/Hero"
 
 const IndexPage = () => {
   return (
-    <>
-      <Header />
+    <Layout>
       <Hero />
-      <Footer />
-    </>
+    </Layout>
   )
 }
 

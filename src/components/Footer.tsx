@@ -1,9 +1,9 @@
 import React from "react"
 
-const Footer = () => {
+const Footer = ({ siteTitle }) => {
   return (
     <footer className="bg-blue-900 w-full py-4 text-white text-center">
-      Footer
+      {siteTitle}
     </footer>
   )
 }

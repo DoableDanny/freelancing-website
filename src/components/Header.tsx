@@ -10,7 +10,7 @@ const navLinks = [
   "Contact",
 ]
 
-const Header = () => {
+const Header = ({ siteTitle }) => {
   return (
     <nav className="fixed w-full z-30 top-0 text-white bg-blue-500">
       {/* Logo */}
@@ -19,7 +19,7 @@ const Header = () => {
           <a href="#" className="font-bold text-2xl lg:text-3xl">
             {/* Icon from: http://www.potlabicons.com/ */}
             <svg
-              class="h-8 fill-current inline"
+              className="h-8 fill-current inline"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512.005 512.005"
             >
@@ -32,22 +32,22 @@ const Header = () => {
                 transform="matrix(1,0,0,1,0,0)"
               />
               <path
-                class="plane-take-off"
+                className="plane-take-off"
                 d=" M 510.7 189.151 C 505.271 168.95 484.565 156.956 464.365 162.385 L 330.156 198.367 L 155.924 35.878 L 107.19 49.008 L 211.729 230.183 L 86.232 263.767 L 36.614 224.754 L 0 234.603 L 45.957 314.27 L 65.274 347.727 L 105.802 336.869 L 240.011 300.886 L 349.726 271.469 L 483.935 235.486 C 504.134 230.057 516.129 209.352 510.7 189.151 Z "
               />
             </svg>
-            AutoSites
+            {siteTitle}
           </a>
         </div>
 
         {/* Hamburger */}
-        <div class="lg:hidden">
+        <div className="lg:hidden">
           <button
             id="nav-toggle"
-            class="flex items-center text-white hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+            className="flex items-center text-white hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
           >
             <svg
-              class="fill-current h-6 w-6"
+              className="fill-current h-6 w-6"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
             >
