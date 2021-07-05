@@ -11,9 +11,9 @@ const Card = ({ title, paragraph, btnText }) => {
         alt="card img"
       />
       <div className="px-2">
-        <h4 className="my-3 font-bold">{title}</h4>
+        <h4 className="my-3 font-bold text-lg">{title}</h4>
         <p>{paragraph}</p>
-        <button className="bg-green-300 rounded p-2 font-bold hover:bg-green-500 hover:text-white hover:shadow-inner shadow-md my-5">
+        <button className="bg-green-300 rounded py-2 px-6 font-bold hover:bg-green-500 hover:text-white hover:shadow-inner shadow-md my-5">
           {btnText}
         </button>
       </div>

@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .home-page-heading {
-  @apply text-center text-4xl font-bold border-b-4 border-blue-500 border-dashed mb-8 pb-4;
+  @apply text-center text-4xl font-bold border-b-4 border-blue-500 border-dashed mb-16 pb-4;
 }
