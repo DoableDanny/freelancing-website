@@ -4,7 +4,7 @@ import Card from "../Card"
 const OurBlog = () => {
   return (
     <section className="py-12 text-gray-800">
-      <div className="container px-4 m-auto">
+      <div className="container px-4 mx-auto">
         <h2 className="home-page-heading">
           <span className="text-blue-500">Our</span> Blog
         </h2>
