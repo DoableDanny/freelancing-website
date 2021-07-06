@@ -14,33 +14,56 @@ const Pricing = () => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-center items-center">
-          <PricingCard title="Basic Plan" price="199" />
+          <PricingCard
+            title="Basic Plan"
+            price="199"
+            features={[
+              "Awesome feature",
+              "And another one",
+              "And finally this one an all",
+            ]}
+          />
           <PricingCard
             title="Pro Plan"
             price="299"
             bannerTitle="MOST POPULAR"
             larger
+            features={[
+              "Awesome feature",
+              "And another one",
+              "And finally this one an all",
+            ]}
           />
-          <PricingCard title="Premium Plan" price={`50 / month`} />
+          <PricingCard
+            title="Premium Plan"
+            price={`50 / month`}
+            features={[
+              "Awesome feature",
+              "And another one",
+              "And finally this one an all",
+            ]}
+          />
         </div>
       </div>
     </section>
   )
 }
 
-const features = [
-  "Awesome feature",
-  "And another one",
-  "And finally this one an all",
-]
-
 type CardProps = {
   title: string
   price: string
   bannerTitle?: string
   larger?: boolean
+  features: string[]
 }
-const PricingCard = ({ title, price, bannerTitle, larger }: CardProps) => {
+
+const PricingCard = ({
+  title,
+  price,
+  bannerTitle,
+  larger,
+  features,
+}: CardProps) => {
   return (
     <div
       className={`rounded-lg shadow-md border-gray-100 border-2 mb-16 md:mb-0 max-w-xs overflow-hidden bg-white ${
@@ -48,7 +71,7 @@ const PricingCard = ({ title, price, bannerTitle, larger }: CardProps) => {
       }`}
     >
       {bannerTitle ? (
-        <div className="bg-blue-500 py-2 text-white text-center">
+        <div className="bg-blue-600 py-2 text-white text-center">
           {bannerTitle}
         </div>
       ) : null}
