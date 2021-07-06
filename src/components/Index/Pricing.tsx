@@ -13,7 +13,7 @@ const Pricing = () => {
           </h3>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center items-center">
+        <div className="flex flex-col md:flex-row justify-center items-center w-11/12 sm:w-full mx-auto">
           <PricingCard
             title="Basic Plan"
             price="199"
