@@ -5,9 +5,9 @@ const OurPortfolio = () => {
   return (
     <section className="py-12 text-gray-800">
       <div className="container px-4 m-auto">
-        <h4 className="home-page-heading">
+        <h2 className="home-page-heading">
           <span className="text-blue-500">Our</span> Portfolio
-        </h4>
+        </h2>
 
         <div className="grid md:grid-cols-3 gap-10">
           <Card

@@ -4,6 +4,7 @@ import Hero from "../components/Index/Hero"
 import WhatWeDo from "../components/Index/WhatWeDo"
 import OurPortfolio from "../components/Index/OurPortfolio"
 import OurBlog from "../components/Index/OurBlog"
+import Pricing from "../components/Index/Pricing"
 
 const IndexPage = () => {
   return (
@@ -12,6 +13,7 @@ const IndexPage = () => {
       <WhatWeDo />
       <OurPortfolio />
       <OurBlog />
+      <Pricing />
     </Layout>
   )
 }
