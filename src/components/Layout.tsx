@@ -17,11 +17,11 @@ const Layout = ({ children }) => {
   const siteTitle = data.site.siteMetadata.title
 
   return (
-    <>
+    <div className="relative pb-12">
       <Header siteTitle={siteTitle} />
-      {children}
+      <main>{children}</main>
       <Footer siteTitle={siteTitle} />
-    </>
+    </div>
   )
 }
 
