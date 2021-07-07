@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef } from "react"
 
 const navLinks = [
   "Home",
@@ -11,8 +11,40 @@ const navLinks = [
 ]
 
 const Header = ({ siteTitle }) => {
+  const hamburger = useRef(null)
+  const hamburgerLine1 = useRef(null)
+  const hamburgerLine2 = useRef(null)
+  const hamburgerLine3 = useRef(null)
+  const menu = useRef(null)
+
+  const toggleMenu = () => {
+    if (menu.current.classList.contains("hidden")) {
+      // Translate hamburge into a cross (X)
+      hamburgerLine1.current.classList.add("rotate-45")
+      hamburgerLine2.current.classList.add("opacity-0")
+      hamburgerLine3.current.classList.add("-rotate-45")
+
+      hamburgerLine1.current.classList.remove("-translate-y-1.5")
+      hamburgerLine3.current.classList.remove("translate-y-1.5")
+
+      // Show the menu
+      menu.current.classList.remove("hidden")
+    } else {
+      // Translate back to hamburger (3 stacked lines)
+      hamburgerLine1.current.classList.remove("rotate-45")
+      hamburgerLine2.current.classList.remove("opacity-0")
+      hamburgerLine3.current.classList.remove("-rotate-45")
+
+      hamburgerLine1.current.classList.add("-translate-y-1.5")
+      hamburgerLine3.current.classList.add("translate-y-1.5")
+
+      // Hide the menu
+      menu.current.classList.add("hidden")
+    }
+  }
+
   return (
-    <nav className="fixed w-full z-30 top-0 text-white bg-blue-500">
+    <header className="fixed w-full z-30 top-0 text-white bg-blue-500">
       {/* Logo */}
       <div className="container p-4 mx-auto flex flex-wrap items-center justify-between">
         <div>
@@ -40,42 +72,57 @@ const Header = ({ siteTitle }) => {
           </a>
         </div>
 
-        {/* Hamburger */}
-        <div className="lg:hidden">
+        <div className="sm:hidden">
           <button
-            id="nav-toggle"
-            className="flex items-center text-white hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+            ref={hamburger}
+            className="text-gray-500 w-10 h-10 relative focus:outline-none bg-white rounded"
+            onClick={toggleMenu}
           >
-            <svg
-              className="fill-current h-6 w-6"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
+            <div className="block w-5 absolute left-1/2 top-1/2   transform -translate-x-1/2 ">
+              <span
+                ref={hamburgerLine1}
+                className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out -translate-y-1.5"
+              ></span>
+              <span
+                ref={hamburgerLine2}
+                className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+              ></span>
+              <span
+                ref={hamburgerLine3}
+                className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out translate-y-1.5"
+              ></span>
+            </div>
           </button>
         </div>
 
         {/* Menu */}
-        <div className="w-full flex-grow lg:flex lg:items-center lg:w-auto mt-2 lg:mt-0 bg-blue-700 lg:bg-transparent p-4 lg:p-0 z-20 hidden">
-          <ul className="lg:flex justify-end flex-1 items-center">
+        <nav
+          ref={menu}
+          className="w-full flex-grow sm:flex sm:items-center sm:w-auto mt-4 sm:mt-0 sm:bg-transparent p-4 sm:p-0 z-20 text-center rounded hidden border-blue-300 border-t-2 sm:border-transparent"
+        >
+          <ul className="sm:flex justify-end flex-1 items-center">
             {navLinks.map(link => (
-              <NavLink title={link} />
+              <NavLink title={link} handleClick={toggleMenu} />
             ))}
           </ul>
-        </div>
+        </nav>
       </div>
-    </nav>
+    </header>
   )
 }
 
-const NavLink = ({ title }) => {
+type NavLinkProps = {
+  title: any
+  handleClick?: any
+}
+
+const NavLink = ({ title, handleClick }: NavLinkProps) => {
   return (
-    <li className="ml-3">
+    <li className="sm:ml-3 mb-4 sm:mb-0">
       <a
         href="#"
-        className="hover:text-gray-100 border-b-2 border-transparent hover:border-gray-100 pb-2"
+        className="hover:text-blue-900 sm:border-b-2 border-transparent hover:border-gray-100 font-medium sm:text-white sm:font-normal sm:hover:text-gray-100"
+        onClick={handleClick}
       >
         {title}
       </a>
