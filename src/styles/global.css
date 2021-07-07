@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .home-page-heading {
   @apply text-center text-4xl font-bold border-b-4 border-blue-500 border-dashed mb-16 pb-4;
 }

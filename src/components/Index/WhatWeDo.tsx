@@ -2,7 +2,7 @@ import React from "react"
 
 const WhatWeDo = () => {
   return (
-    <section className="py-12 text-gray-800">
+    <section id="about" className="py-12 text-gray-800">
       <div className="container px-4 mx-auto flex flex-col justify-center items-center">
         <div className="w-3/5">
           <h2 className="home-page-heading">

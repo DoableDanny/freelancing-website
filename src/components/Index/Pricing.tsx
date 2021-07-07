@@ -2,7 +2,7 @@ import React from "react"
 
 const Pricing = () => {
   return (
-    <section className="py-12 text-gray-800">
+    <section id="pricing" className="py-12 text-gray-800">
       <div className="container m-auto">
         <div className="home-page-heading">
           <h2>

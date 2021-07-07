@@ -3,7 +3,7 @@ import Card from "../Card"
 
 const OurPortfolio = () => {
   return (
-    <section className="py-12 text-gray-800">
+    <section id="portfolio" className="py-12 text-gray-800">
       <div className="container px-4 m-auto">
         <h2 className="home-page-heading">
           <span className="text-blue-500">Our</span> Portfolio

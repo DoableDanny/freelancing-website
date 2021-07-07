@@ -1,13 +1,11 @@
 import React, { useRef } from "react"
 
 const navLinks = [
-  "Home",
-  "About",
-  "Services",
-  "Portfolio",
-  "Pricing",
-  "Blog",
-  "Contact",
+  { title: "About", url: "/#about" },
+  { title: "Portfolio", url: "/#portfolio" },
+  { title: "Pricing", url: "/#pricing" },
+  { title: "Blog", url: "/#blog" },
+  { title: "Contact", url: "/#contact" },
 ]
 
 const Header = ({ siteTitle }) => {
@@ -46,9 +44,9 @@ const Header = ({ siteTitle }) => {
   return (
     <header className="fixed w-full z-30 top-0 text-white bg-blue-500">
       {/* Logo */}
-      <div className="container p-4 mx-auto flex flex-wrap items-center justify-between">
+      <div className="container p-4 xl:px-16 mx-auto flex flex-wrap items-center justify-between">
         <div>
-          <a href="#" className="font-bold text-2xl lg:text-3xl">
+          <a href="/" className="font-bold text-2xl lg:text-3xl">
             {/* Icon from: http://www.potlabicons.com/ */}
             <svg
               className="h-8 fill-current inline"
@@ -102,7 +100,11 @@ const Header = ({ siteTitle }) => {
         >
           <ul className="sm:flex justify-end flex-1 items-center">
             {navLinks.map(link => (
-              <NavLink title={link} handleClick={toggleMenu} />
+              <NavLink
+                title={link.title}
+                href={link.url}
+                handleClick={toggleMenu}
+              />
             ))}
           </ul>
         </nav>
@@ -113,15 +115,16 @@ const Header = ({ siteTitle }) => {
 
 type NavLinkProps = {
   title: any
+  href: string
   handleClick?: any
 }
 
-const NavLink = ({ title, handleClick }: NavLinkProps) => {
+const NavLink = ({ title, href, handleClick }: NavLinkProps) => {
   return (
-    <li className="sm:ml-3 mb-4 sm:mb-0">
+    <li className="sm:ml-4 mb-4 sm:mb-0">
       <a
-        href="#"
-        className="hover:text-blue-900 sm:border-b-2 border-transparent hover:border-gray-100 font-medium sm:text-white sm:font-normal sm:hover:text-gray-100"
+        href={href}
+        className="hover:text-blue-900 sm:border-b-2 border-transparent hover:border-gray-100 font-medium sm:text-white sm:font-normal sm:hover:text-gray-100 sm:pb-1 text-lg"
         onClick={handleClick}
       >
         {title}
