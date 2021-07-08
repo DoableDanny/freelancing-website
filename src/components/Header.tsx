@@ -1,4 +1,5 @@
 import React, { useRef } from "react"
+import { Link } from "gatsby"
 
 const navLinks = [
   { title: "About", url: "/#about" },
@@ -46,7 +47,7 @@ const Header = ({ siteTitle }) => {
       {/* Logo */}
       <div className="container p-4 xl:px-16 mx-auto flex flex-wrap items-center justify-between">
         <div>
-          <a href="/" className="font-bold text-2xl lg:text-3xl">
+          <Link to="/" className="font-bold text-2xl lg:text-3xl">
             {/* Icon from: http://www.potlabicons.com/ */}
             <svg
               className="h-8 fill-current inline"
@@ -67,7 +68,7 @@ const Header = ({ siteTitle }) => {
               />
             </svg>
             {siteTitle}
-          </a>
+          </Link>
         </div>
 
         {/* Hamburger */}
@@ -123,13 +124,13 @@ type NavLinkProps = {
 const NavLink = ({ title, href, handleClick }: NavLinkProps) => {
   return (
     <li className="sm:ml-4 mb-4 sm:mb-0">
-      <a
-        href={href}
+      <Link
+        to={href}
         className="hover:text-blue-900 sm:border-b-2 border-transparent hover:border-gray-100 font-medium sm:text-white sm:font-normal sm:hover:text-gray-100 sm:pb-1 text-lg"
         onClick={handleClick}
       >
         {title}
-      </a>
+      </Link>
     </li>
   )
 }
