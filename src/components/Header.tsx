@@ -70,10 +70,11 @@ const Header = ({ siteTitle }) => {
           </a>
         </div>
 
+        {/* Hamburger */}
         <div className="sm:hidden">
           <button
             ref={hamburger}
-            className="text-gray-500 w-10 h-10 relative focus:outline-none bg-white rounded"
+            className="text-gray-600 w-8 h-8 relative focus:outline-none bg-white rounded"
             onClick={toggleMenu}
           >
             <div className="block w-5 absolute left-1/2 top-1/2   transform -translate-x-1/2 ">
