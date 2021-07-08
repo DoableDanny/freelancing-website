@@ -1,7 +1,31 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 import Card from "../Card"
 
 const OurBlog = () => {
+  const data = useStaticQuery(graphql`
+    query BlogPostsQuery {
+      allMdx(limit: 3) {
+        edges {
+          node {
+            frontmatter {
+              title
+              slug
+              excerpt
+              feature_image {
+                childrenImageSharp {
+                  gatsbyImageData(width: 350, placeholder: BLURRED)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <section id="blog" className="py-12 text-gray-800">
       <div className="container px-4 mx-auto lg:w-5/6 xl:w-4/6">
@@ -10,16 +34,22 @@ const OurBlog = () => {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-10 md:gap-0">
-          <Card
-            title="Why you are Losing Money by Not having a website"
-            paragraph="One of the first things people do when looking for something is to Google it. If you don't have a website, people can't easily see what you do or how much you charge. Having a professional site makes a big differennce."
-            btnText="Read"
-          />
-          <Card
-            title="Why you are Losing Money by Not having a website"
-            paragraph="One of the first things people do when looking for something is to Google it. If you don't have a website, people can't easily see what you do or how much you charge. Having a professional site makes a big differennce."
-            btnText="Read"
-          />
+          {data.allMdx.edges.map((edge, i) => {
+            const frontmatter = edge.node.frontmatter
+
+            return (
+              <Card
+                imgSrc={
+                  frontmatter.feature_image.childrenImageSharp[0]
+                    .gatsbyImageData
+                }
+                title={frontmatter.title}
+                paragraph={frontmatter.excerpt}
+                gatsbyLinkUrl={frontmatter.slug}
+                btnText="Read"
+              />
+            )
+          })}
         </div>
       </div>
     </section>
