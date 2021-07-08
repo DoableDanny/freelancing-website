@@ -15,8 +15,8 @@ type CardProps = {
 const Card = ({
   title,
   paragraph,
-  imgSrc,
   btnText,
+  imgSrc,
   gatsbyLinkUrl,
   href,
 }: CardProps) => {
@@ -24,8 +24,10 @@ const Card = ({
     "bg-green-500 rounded py-3 px-12 font-medium hover:bg-green-400 text-white hover:shadow-inner shadow-md my-5 inline-block"
 
   return (
-    <div className="rounded shadow-md max-w-xs overflow-hidden text-center mx-auto transform hover:scale-105 hover:shadow-lg cursor-pointer transition duration-300 ease-in-out">
+    <div className="rounded shadow-md max-w-xs overflow-hidden text-center mx-auto transform hover:scale-105 hover:shadow-lg transition duration-300 ease-in-out">
+      {/* StaticImage can't accept external props, therefore we have to use GatsbyImage here. */}
       <GatsbyImage className="w-full h-52" image={imgSrc} alt="card img" />
+
       <div className="px-2">
         <h4 className="my-3 font-bold text-lg">{title}</h4>
         <p>{paragraph}</p>
