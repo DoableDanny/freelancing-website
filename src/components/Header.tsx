@@ -80,6 +80,7 @@ const Header = ({ siteTitle }) => {
           <ul className="sm:flex justify-end flex-1 items-center">
             {navLinks.map(link => (
               <NavLink
+                key={link.title}
                 title={link.title}
                 href={link.url}
                 handleClick={() => {

@@ -32,24 +32,26 @@ const OurBlog = () => {
           <span className="text-blue-500">Our</span> Blog
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-10 md:gap-0">
+        <ul className="grid md:grid-cols-2 gap-10 md:gap-0">
           {data.allMdx.edges.map((edge, i) => {
             const frontmatter = edge.node.frontmatter
 
             return (
-              <Card
-                imgSrc={
-                  frontmatter.feature_image.childrenImageSharp[0]
-                    .gatsbyImageData
-                }
-                title={frontmatter.title}
-                paragraph={frontmatter.excerpt}
-                gatsbyLinkUrl={frontmatter.slug}
-                btnText="Read"
-              />
+              <li key={i}>
+                <Card
+                  imgSrc={
+                    frontmatter.feature_image.childrenImageSharp[0]
+                      .gatsbyImageData
+                  }
+                  title={frontmatter.title}
+                  paragraph={frontmatter.excerpt}
+                  gatsbyLinkUrl={frontmatter.slug}
+                  btnText="Read"
+                />
+              </li>
             )
           })}
-        </div>
+        </ul>
       </div>
     </section>
   )
