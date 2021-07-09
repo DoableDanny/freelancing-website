@@ -21,7 +21,7 @@ const Card = ({
   href,
 }: CardProps) => {
   const btnClassNames =
-    "bg-green-500 rounded py-3 px-12 font-medium hover:bg-green-400 text-white hover:shadow-inner shadow-md my-5 inline-block"
+    "bg-green-500 rounded py-3 px-12 font-medium hover:bg-green-400 text-white hover:shadow-inner shadow-md my-5 inline-block cursor-pointer"
 
   return (
     <div className="rounded shadow-md max-w-xs overflow-hidden text-center mx-auto transform hover:scale-105 hover:shadow-lg transition duration-300 ease-in-out">

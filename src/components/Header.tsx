@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 
 const navLinks = [
@@ -10,37 +10,10 @@ const navLinks = [
 ]
 
 const Header = ({ siteTitle }) => {
-  const hamburger = useRef(null)
-  const hamburgerLine1 = useRef(null)
-  const hamburgerLine2 = useRef(null)
-  const hamburgerLine3 = useRef(null)
-  const menu = useRef(null)
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false)
 
-  const toggleMenu = () => {
-    if (menu.current.classList.contains("hidden")) {
-      // Translate hamburge into a cross (X)
-      hamburgerLine1.current.classList.add("rotate-45")
-      hamburgerLine2.current.classList.add("opacity-0")
-      hamburgerLine3.current.classList.add("-rotate-45")
-
-      hamburgerLine1.current.classList.remove("-translate-y-1.5")
-      hamburgerLine3.current.classList.remove("translate-y-1.5")
-
-      // Show the menu
-      menu.current.classList.remove("hidden")
-    } else {
-      // Translate back to hamburger (3 stacked lines)
-      hamburgerLine1.current.classList.remove("rotate-45")
-      hamburgerLine2.current.classList.remove("opacity-0")
-      hamburgerLine3.current.classList.remove("-rotate-45")
-
-      hamburgerLine1.current.classList.add("-translate-y-1.5")
-      hamburgerLine3.current.classList.add("translate-y-1.5")
-
-      // Hide the menu
-      menu.current.classList.add("hidden")
-    }
-  }
+  const hamburgerLineClasses =
+    "block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
 
   return (
     <header className="fixed w-full z-30 top-0 text-white bg-blue-500">
@@ -74,22 +47,25 @@ const Header = ({ siteTitle }) => {
         {/* Hamburger */}
         <div className="sm:hidden">
           <button
-            ref={hamburger}
             className="text-gray-600 w-8 h-8 relative focus:outline-none bg-white rounded"
-            onClick={toggleMenu}
+            onClick={() => setIsHamburgerOpen(current => !current)}
           >
+            {/* Three Hamburger Lines */}
             <div className="block w-5 absolute left-1/2 top-1/2   transform -translate-x-1/2 ">
               <span
-                ref={hamburgerLine1}
-                className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out -translate-y-1.5"
+                className={`${hamburgerLineClasses} ${
+                  isHamburgerOpen ? "rotate-45" : "-translate-y-1.5"
+                }`}
               ></span>
               <span
-                ref={hamburgerLine2}
-                className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+                className={`${hamburgerLineClasses} ${
+                  isHamburgerOpen ? "opacity-0" : null
+                }`}
               ></span>
               <span
-                ref={hamburgerLine3}
-                className="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out translate-y-1.5"
+                className={`${hamburgerLineClasses} ${
+                  isHamburgerOpen ? "-rotate-45" : "translate-y-1.5"
+                }`}
               ></span>
             </div>
           </button>
@@ -97,15 +73,20 @@ const Header = ({ siteTitle }) => {
 
         {/* Menu */}
         <nav
-          ref={menu}
-          className="w-full flex-grow sm:flex sm:items-center sm:w-auto mt-4 sm:mt-0 sm:bg-transparent p-4 sm:p-0 z-20 text-center rounded hidden border-blue-300 border-t-2 sm:border-transparent"
+          className={`w-full flex-grow sm:flex sm:items-center sm:w-auto mt-4 sm:mt-0 sm:bg-transparent p-4 sm:p-0 z-20 text-center rounded border-blue-300 border-t-2 sm:border-transparent ${
+            isHamburgerOpen ? null : "hidden"
+          }`}
         >
           <ul className="sm:flex justify-end flex-1 items-center">
             {navLinks.map(link => (
               <NavLink
                 title={link.title}
                 href={link.url}
-                handleClick={toggleMenu}
+                handleClick={() => {
+                  if (isHamburgerOpen) {
+                    setIsHamburgerOpen(false)
+                  }
+                }}
               />
             ))}
           </ul>
@@ -115,10 +96,11 @@ const Header = ({ siteTitle }) => {
   )
 }
 
+// Nav link component
 type NavLinkProps = {
-  title: any
+  title: string
   href: string
-  handleClick?: any
+  handleClick?: () => void
 }
 
 const NavLink = ({ title, href, handleClick }: NavLinkProps) => {
