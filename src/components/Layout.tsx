@@ -18,11 +18,16 @@ const Layout = ({ children }) => {
   const siteTitle = data.site.siteMetadata.title
 
   return (
-    <div className="relative pt-16 pb-12 min-h-screen">
+    <>
       <Header siteTitle={siteTitle} />
-      <main>{children}</main>
-      <Footer siteTitle={siteTitle} />
-    </div>
+      <div
+        id="content-wrapper"
+        className="pt-16 flex flex-col justify-between min-h-screen"
+      >
+        <main>{children}</main>
+        <Footer siteTitle={siteTitle} />
+      </div>
+    </>
   )
 }
 
