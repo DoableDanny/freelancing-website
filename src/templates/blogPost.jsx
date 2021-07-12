@@ -5,8 +5,6 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import "../styles/blog-post.module.css"
-
 // Provide common components that can be used in mdx files without having to import.
 const shortcodes = { Link }
 
