@@ -23,9 +23,17 @@ const OurPortfolio = () => {
   return (
     <section id="portfolio" className="py-12 text-gray-800">
       <div className="container px-4 m-auto">
-        <h2 className="home-page-heading">
-          <span className="text-blue-500">Our</span> Portfolio
-        </h2>
+        <div className="home-page-heading">
+          <p className="my-5 text-base font-medium tracking-tight text-blue-500 uppercase">
+            We take pride in our work
+          </p>
+          <h2>
+            <span className="text-blue-500">Our</span> Portfolio
+          </h2>
+          <p className="text-xl font-medium text-gray-500 my-6">
+            Check out the websites we've made for businesses just like yours.
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-10">
           <Card

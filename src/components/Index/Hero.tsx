@@ -24,7 +24,7 @@ const Hero = () => {
 
         {/* Right col */}
         <div className="w-full md:w-3/5 py-6 text-center">
-          <StaticImage src="../../images/jeep.svg" alt="hero img" />
+          <StaticImage src="../../images/jeep-hero.svg" alt="hero img" />
         </div>
       </div>
     </div>

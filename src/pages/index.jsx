@@ -14,9 +14,9 @@ const IndexPage = () => {
       <Hero />
       <WhatWeDo />
       <OurPortfolio />
+      <Testimonials />
       <OurBlog />
       <Pricing />
-      <Testimonials />
       <Contact />
     </>
   )

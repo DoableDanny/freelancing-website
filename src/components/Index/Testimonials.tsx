@@ -3,7 +3,7 @@ import React from "react"
 const Portfolio = () => {
   return (
     <section className="py-12 text-gray-800">
-      <div className="container px-4 mx-auto">
+      <div className="container px-4 mx-auto text-lg">
         <div className="home-page-heading">
           <p className="my-5 text-base font-medium tracking-tight text-blue-500 uppercase">
             Our customers love our product

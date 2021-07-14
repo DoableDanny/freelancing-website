@@ -28,8 +28,8 @@ const Card = ({
       {/* StaticImage can't accept external props, therefore we have to use GatsbyImage here. */}
       <GatsbyImage className="w-full h-52" image={imgSrc} alt="card img" />
 
-      <div className="px-2">
-        <h4 className="my-3 font-bold text-lg">{title}</h4>
+      <div className="px-2 text-lg">
+        <h4 className="my-3 font-bold">{title}</h4>
         <p>{paragraph}</p>
         {gatsbyLinkUrl ? (
           <Link to={gatsbyLinkUrl} className={btnClassNames}>

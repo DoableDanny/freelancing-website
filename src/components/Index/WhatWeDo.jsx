@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
 import ResponsiveDesignIcon from "../../images/responsive-design-icon.svg"
 import SEOIcon from "../../images/seo-icon.svg"
@@ -30,16 +29,16 @@ const WhatWeDo = () => {
           </div>
 
           <p className="text-lg text-center">
-            **SiteTitle** is a Stoke, Staffordshire based web design company. We
-            help garages{" "}
+            {data.site.siteMetadata.title} is a Stoke, UK based web design
+            company. We help garages{" "}
             <span className="font-bold">
               get more clients by launching affordable and scalable web design
               projects.
             </span>
           </p>
           <p className="text-lg text-center mt-8">
-            We specialise in responsive web design, wordpress maintenance, and
-            digital marketing to help get more people to your garage.
+            We specialise in responsive web design and digital marketing to help
+            get more people to your garage, and make you more money.
           </p>
         </div>
 
@@ -50,7 +49,7 @@ const WhatWeDo = () => {
             icon={<ResponsiveDesignIcon className={iconWidth} />}
           />
           <InfoListItem
-            title="SEO and SEM"
+            title="Optimization"
             description="We use proven Search Engine Optimization and Search Engine Marketing to ensure that your website ranks well on Google, driving traffic to your website."
             icon={<SEOIcon className={iconWidth} />}
           />
