@@ -17,30 +17,33 @@ const Pricing = () => {
           <PricingCard
             title="Basic Plan"
             price="199"
+            description="A beautifully designed four-page website to give your business a professional image and drive more people to your garage."
             features={[
-              "Awesome feature",
-              "And another one",
-              "And finally this one an all",
+              "4 page website",
+              "Custom colors, text & images",
+              "SEO optimized",
             ]}
           />
           <PricingCard
             title="Pro Plan"
             price="299"
+            description="Many people today prefer to book online rather than call. Cater for these people with a website with an online booking system."
             bannerTitle="MOST POPULAR"
             larger
             features={[
-              "Awesome feature",
-              "And another one",
-              "And finally this one an all",
+              "5 page website",
+              "Take bookings online",
+              "Custom colors, text & images",
+              "SEO optimized",
             ]}
           />
           <PricingCard
             title="Premium Plan"
             price={`50 / month`}
+            description="Run ads on Google for specific search terms to drive traffic away from your competitors and to your website."
             features={[
-              "Awesome feature",
-              "And another one",
-              "And finally this one an all",
+              "Google ads",
+              "We'll run experiments to optimize your ads",
             ]}
           />
         </div>
@@ -52,6 +55,7 @@ const Pricing = () => {
 type CardProps = {
   title: string
   price: string
+  description: string
   bannerTitle?: string
   larger?: boolean
   features: string[]
@@ -60,6 +64,7 @@ type CardProps = {
 const PricingCard = ({
   title,
   price,
+  description,
   bannerTitle,
   larger,
   features,
@@ -80,21 +85,17 @@ const PricingCard = ({
           <span className="font-bold mr-2">{title.split(" ")[0]}</span>{" "}
           {title.split(" ")[1]}
         </h3>
-        <h4 className="text-4xl font-bold flex items-center justify-center mb-10">
-          <span className="text-gray-700 text-lg">£</span>
-          {price}
+        <h4 className="text-4xl font-bold flex items-center justify-center mb-10 text-center">
+          £{price}
         </h4>
-        <p className="mb-8 text-gray-600 text-sm">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi
-          molestiae est provident quae.
-        </p>
+        <p className="mb-8 text-gray-600 text-sm">{description}</p>
 
-        <ul className="text-xl">
+        <ul>
           {features.map((feature, i) => (
             <li key={i} className="flex items-center mb-2">
-              <div className="text-green-500 rounded-full fill-current ">
+              <div className="text-green-500 rounded-full fill-current">
                 <svg
-                  className="w-6 h-6 align-middle"
+                  className="w-5 h-5 align-middle"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -106,14 +107,17 @@ const PricingCard = ({
                   <polyline points="22 4 12 14.01 9 11.01"></polyline>
                 </svg>
               </div>
-              <span className="ml-3 text-lg">{feature}</span>
+              <span className="ml-3">{feature}</span>
             </li>
           ))}
         </ul>
 
-        <button className="mx-auto block bg-green-500 mt-12 text-white py-3 px-8 rounded hover:bg-blue-600 text-lg">
-          SELECT THIS PLAN
-        </button>
+        <a
+          href="#contact"
+          className="mx-auto block bg-green-500 mt-12 text-white py-3 rounded hover:bg-blue-600 text-lg text-center"
+        >
+          CONTACT US
+        </a>
       </div>
     </div>
   )

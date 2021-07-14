@@ -27,8 +27,13 @@ const Contact = () => {
             placeholder="Enter your email..."
             required
           />
+          <FormInput
+            label="Phone"
+            inputType="tel"
+            placeholder="Enter your phone number..."
+          />
           <div>
-            <label className="block mb-1">Message</label>
+            <label className="block mb-1">Message *</label>
             <textarea
               className="w-full rounded h-40 text-black p-2 mb-3"
               placeholder="Your message here..."
@@ -62,7 +67,10 @@ const FormInput = ({
 }: FormInputProps) => {
   return (
     <div className="flex flex-col mb-3">
-      <label className="mb-1">{label}:</label>
+      <label className="mb-1">
+        {label}
+        {required && " *"}
+      </label>
       <input
         type={inputType}
         className="rounded border-2 border-gray-500 p-2 text-black"
