@@ -2,7 +2,7 @@
 title: How a Website Gets your Garage more Customers and Increases Revenue
 slug: why-your-garage-needs-a-website
 feature_image: pic.jpg
-excerpt: One of the first things people do when looking for something is to Google it. If you don't have a website, people can't easily see what you do or how much you charge. Having a professional site makes a big difference.
+excerpt: '"But it’s not just getting information, such as the services you offer, you opening hours and contact details that they want; today, people want to book MOTs and repairs online and pay for it then and there."'
 ---
 
 The first thing people do when they search for a local business is Google it. It’s been found that 97% of people learn more about a local company online than anywhere else. (Source: <a href="https://seotribunal.com/blog/stats-to-understand-seo/#local-seo-facts" target="_blank">SEO Tribunal</a>).
@@ -23,7 +23,7 @@ At the end of the day, businesses don’t have websites just to make themselves 
 
 Here are six ways that having a good, functional website benefits your business…
 
-## 1. The internet is the customer’s first port-of-call
+## 1. The internet is the customer’s starting point
 
 Today, anyone needing an MOT, service or vehicle repair will begin their search online. Nobody is going to dig up the Yellow Pages or check the local newspaper when they have a smartphone at their fingertips. If you don't have a website, then your ability to get new business is going to be more limited.
 
@@ -31,7 +31,7 @@ Yes, you can always register with an online directory, like Yell, but these prov
 
 A professional website assumes a professional business. Without this, that potential client will often go elsewhere.
 
-## 2. A website is a service in itself
+## 2. A website is a service
 
 People will continue coming to your garage if you do a great service. But nowadays, that service goes beyond the garage itself; the modern customer wants convenience and speed in the way they deal with your business. They don’t want to have to ring you up or dig around to find out what you do.
 
@@ -59,7 +59,7 @@ Once you have a website, you can set up an account with Google My Business. You 
 
 You can then display those Google reviews on your website. Social proof helps people that have never used your garage before to see that others have had a positive experience with you, and persuades them that going with you is a good choice.
 
-## 4. Get found by more customers
+## 4. Be found by more customers
 
 Above we mentioned the benefits of having getting reviews after creating a free Google My Business account. But there are more benefits. Having a Google My Business account automatically puts you in the Google business directory. This makes it more likely that your business will appear in the search results when customers make local searches for garages – such as “MOT test Manchester” or “repair garage near me”.
 
@@ -69,7 +69,7 @@ Another advantage of having a Google My Business account is that if someone dire
 
 ![Cheadle test centre](cheadle-test-centre.png)
 
-## 5. Put your expertise and services on show
+## 5. Show-off your expertise, professionalism and services
 
 One of the key advantages of a website is that you can promote your services. Not only can you provide written information, but you can upload images showcasing the quality of your work, and your specialist equipment.
 
@@ -85,4 +85,4 @@ A website makes your information available 24/7. This is great for your customer
 
 As you can see, having a good website makes it easier for people to find you, builds your reputation so first-time customers will be more likely to trust you, and does a lot of marketing and sales work for you so that you can spend more time under the bonnet – increasing your garages revenue.
 
-Feel free to <Link to="/#contact">contact us</Link> to see what we can do for your business. Don't be shy!
+Feel free to <Link to="/#contact">contact us</Link> to discuss how we can best help your business. Don't be shy!

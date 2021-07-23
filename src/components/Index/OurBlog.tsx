@@ -32,7 +32,7 @@ const OurBlog = () => {
           <span className="text-blue-500">Our</span> Blog
         </h2>
 
-        <ul className="grid md:grid-cols-2 gap-10 md:gap-0">
+        <ul className="grid md:grid-cols-1 gap-10 md:gap-0">
           {data.allMdx.edges.map((edge, i) => {
             const frontmatter = edge.node.frontmatter
 
