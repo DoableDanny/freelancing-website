@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import Fade from "react-reveal/Fade"
 
 import Card from "../Card"
 
@@ -25,6 +26,8 @@ const OurBlog = () => {
     }
   `)
 
+  let cardDelay = 400
+
   return (
     <section id="blog" className="py-12 text-gray-800">
       <div className="container px-4 mx-auto lg:w-5/6 xl:w-4/6">
@@ -36,19 +39,23 @@ const OurBlog = () => {
           {data.allMdx.edges.map((edge, i) => {
             const frontmatter = edge.node.frontmatter
 
+            cardDelay -= 200
+
             return (
-              <li key={i}>
-                <Card
-                  imgSrc={
-                    frontmatter.feature_image.childrenImageSharp[0]
-                      .gatsbyImageData
-                  }
-                  title={frontmatter.title}
-                  paragraph={frontmatter.excerpt}
-                  gatsbyLinkUrl={frontmatter.slug}
-                  btnText="Read"
-                />
-              </li>
+              <Fade left delay={cardDelay}>
+                <li key={i}>
+                  <Card
+                    imgSrc={
+                      frontmatter.feature_image.childrenImageSharp[0]
+                        .gatsbyImageData
+                    }
+                    title={frontmatter.title}
+                    paragraph={frontmatter.excerpt}
+                    gatsbyLinkUrl={frontmatter.slug}
+                    btnText="Read"
+                  />
+                </li>
+              </Fade>
             )
           })}
         </ul>
