@@ -19,6 +19,7 @@ const Contact = () => {
           <form
             className="mx-auto"
             method="POST"
+            action="/success"
             data-netlify="true"
             name="contact"
             netlify-honeypot="bot-field"

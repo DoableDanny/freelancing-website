@@ -22,13 +22,13 @@ const Portfolio = () => {
           <Fade left>
             <TestimonialCard />
           </Fade>
-          <Fade left delay={200}>
+          <Fade left>
             <TestimonialCard />
           </Fade>
-          <Fade left delay={400}>
+          <Fade left>
             <TestimonialCard />
           </Fade>
-          <Fade left delay={600}>
+          <Fade left>
             <TestimonialCard />
           </Fade>
         </div>
