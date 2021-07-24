@@ -1,25 +1,36 @@
 import React from "react"
+import Fade from "react-reveal/Fade"
 
 const Portfolio = () => {
   return (
     <section className="py-12 text-gray-800">
       <div className="container px-4 mx-auto text-lg">
-        <div className="home-page-heading">
-          <p className="my-5 text-base font-medium tracking-tight text-blue-500 uppercase">
-            Our customers love our product
-          </p>
-          <h2 className="">Testimonials</h2>
-          <p className="text-xl font-medium text-gray-500 my-6">
-            Don't just take our word for it, read from our extensive list of
-            case studies and customer testimonials.
-          </p>
-        </div>
+        <Fade>
+          <div className="home-page-heading">
+            <p className="my-5 text-base font-medium tracking-tight text-blue-500 uppercase">
+              Our customers love our product
+            </p>
+            <h2 className="">Testimonials</h2>
+            <p className="text-xl font-medium text-gray-500 my-6">
+              Don't just take our word for it, read from our extensive list of
+              case studies and customer testimonials.
+            </p>
+          </div>
+        </Fade>
 
         <div className="xl:grid xl:grid-cols-2 xl:gap-10">
-          <TestimonialCard />
-          <TestimonialCard />
-          <TestimonialCard />
-          <TestimonialCard />
+          <Fade left>
+            <TestimonialCard />
+          </Fade>
+          <Fade left delay={200}>
+            <TestimonialCard />
+          </Fade>
+          <Fade left delay={400}>
+            <TestimonialCard />
+          </Fade>
+          <Fade left delay={600}>
+            <TestimonialCard />
+          </Fade>
         </div>
       </div>
     </section>
@@ -45,12 +56,12 @@ const TestimonialCard = () => {
           <path d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
         </svg>
         <p className="my-4">
-          Fantastic work! The website looks amazing and we are already seeing
-          more clients visit the garage.
+          Your review will go here, for example: Fantastic work! The website
+          looks amazing and we are already seeing more clients visit the garage.
         </p>
         <p>
-          <span className="text-gray-800">Sandra Bullock</span> - CEO, Big
-          Garage Company
+          <span className="text-gray-800">Your Name</span> - Owner of Example
+          Garage
         </p>
       </div>
     </div>

@@ -1,52 +1,57 @@
 import React from "react"
+import Fade from "react-reveal/Fade"
 
 const Pricing = () => {
   return (
     <section id="pricing" className="py-12 text-gray-800">
       <div className="container m-auto">
-        <div className="home-page-heading">
-          <h2>
-            <span className="text-blue-500">Our </span>Pricing
-          </h2>
-          <h3 className="font-extrabold text-5xl my-6">
-            Simple, Transparent Pricing for Everyone
-          </h3>
-        </div>
+        <Fade>
+          <div className="home-page-heading">
+            <h2>
+              <span className="text-blue-500">Our </span>Pricing
+            </h2>
+            <h3 className="font-extrabold text-5xl my-6">
+              Simple, Transparent Pricing for Everyone
+            </h3>
+          </div>
+        </Fade>
 
-        <div className="flex flex-col md:flex-row justify-center items-center w-11/12 sm:w-full mx-auto">
-          <PricingCard
-            title="Basic Plan"
-            price="199"
-            description="A beautifully designed four-page website to give your business a professional image and drive more people to your garage."
-            features={[
-              "4 page website",
-              "Custom colors, text & images",
-              "SEO optimized",
-            ]}
-          />
-          <PricingCard
-            title="Pro Plan"
-            price="299"
-            description="Many people today prefer to book online rather than call. Cater for these people with a website with an online booking system."
-            bannerTitle="MOST POPULAR"
-            larger
-            features={[
-              "5 page website",
-              "Take bookings online",
-              "Custom colors, text & images",
-              "SEO optimized",
-            ]}
-          />
-          <PricingCard
-            title="Premium Plan"
-            price={`50 / month`}
-            description="Run ads on Google for specific search terms to drive traffic away from your competitors and to your website."
-            features={[
-              "Google ads",
-              "We'll run experiments to optimize your ads",
-            ]}
-          />
-        </div>
+        <Fade left>
+          <div className="flex flex-col md:flex-row justify-center items-center w-11/12 sm:w-full mx-auto">
+            <PricingCard
+              title="Basic Plan"
+              price="199"
+              description="A beautifully designed four-page website to give your business a professional image and drive more people to your garage."
+              features={[
+                "4 page website",
+                "Custom colors, text & images",
+                "SEO optimized",
+              ]}
+            />
+            <PricingCard
+              title="Pro Plan"
+              price="299"
+              description="Many people today prefer to book online rather than call. Cater for these people with a website with an online booking system."
+              bannerTitle="MOST POPULAR"
+              larger
+              features={[
+                "5 page website",
+                "Take bookings online",
+                "Custom colors, text & images",
+                "SEO optimized",
+              ]}
+            />
+            <PricingCard
+              title="Premium Plan"
+              price={`50 / month`}
+              description="Run ads on Google for specific search terms to drive traffic away from your competitors and to your website."
+              features={[
+                "Google ads",
+                "We'll run experiments to optimize your ads",
+              ]}
+            />
+          </div>
+        </Fade>
       </div>
     </section>
   )
