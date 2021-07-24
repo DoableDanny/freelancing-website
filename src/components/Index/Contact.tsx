@@ -16,7 +16,17 @@ const Contact = () => {
               on 01232 765 374
             </p>
           </div>
-          <form className="mx-auto">
+          <form
+            className="mx-auto"
+            method="POST"
+            data-netlify="true"
+            name="contact"
+            netlify-honeypot="bot-field"
+          >
+            <label className="hidden">
+              This is a hidden field to trick bots:
+              <input name="bot-field" />
+            </label>
             <FormInput
               label="Name"
               inputType="text"
@@ -35,9 +45,10 @@ const Contact = () => {
               placeholder="Enter your phone number..."
             />
             <div>
-              <label className="block mb-1">Message *</label>
+              <label className="block mb-1">Message: *</label>
               <textarea
                 className="w-full rounded h-40 text-black p-2 mb-3"
+                name="message"
                 placeholder="Your message here..."
                 required
               ></textarea>
@@ -70,11 +81,12 @@ const FormInput = ({
 }: FormInputProps) => {
   return (
     <div className="flex flex-col mb-3">
-      <label className="mb-1">
-        {label}
-        {required && " *"}
+      <label className="mb-1" htmlFor={label.toLowerCase()}>
+        {label}:{required && " *"}
       </label>
       <input
+        id={label.toLowerCase()}
+        name={label.toLowerCase()}
         type={inputType}
         className="rounded border-2 border-gray-500 p-2 text-black"
         placeholder={placeholder}
