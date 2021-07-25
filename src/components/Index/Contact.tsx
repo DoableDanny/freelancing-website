@@ -2,28 +2,41 @@ import React, { useState } from "react"
 import { ChangeEventHandler } from "react"
 import Fade from "react-reveal/Fade"
 
-const encode = data => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&")
-}
-
 const Contact = () => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
   const [message, setMessage] = useState("")
 
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
   const handleSubmit = e => {
-    fetch("/", {
+    e.preventDefault()
+
+    const options = {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", name, email, phone, message }),
-    })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error))
+      body: encode({
+        "form-name": "contact",
+        name,
+        email,
+        phone,
+        message,
+      }),
+    }
 
-    e.preventDefault()
+    console.log(options)
+
+    fetch("/", options)
+      .then(response => {
+        console.log(response)
+        window.location.assign("/success/")
+      })
+      .catch(error => console.log(error))
   }
 
   return (
@@ -31,8 +44,8 @@ const Contact = () => {
       id="contact"
       className="py-12 text-white bg-gradient-to-r from-blue-700 to-blue-500"
     >
-      <Fade left>
-        <div className="container mx-auto px-4 max-w-xl">
+      <div className="container mx-auto px-4 max-w-xl">
+        <Fade>
           <div className="text-center">
             <h2 className="text-4xl font-bold mb-8">Contact Us</h2>
             <p className="text-2xl my-4 font-medium mb-8">
@@ -40,12 +53,15 @@ const Contact = () => {
               on 01232 765 374
             </p>
           </div>
+        </Fade>
+
+        <Fade left>
           <form
             className="mx-auto"
-            method="POST"
             data-netlify="true"
             name="contact"
             netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
           >
             <label className="hidden">
               This is a hidden field to trick bots:
@@ -100,13 +116,12 @@ const Contact = () => {
             <button
               type="submit"
               className="bg-green-500 rounded w-full py-3 hover:bg-green-400 transition duration-300 ease-in font-medium"
-              onSubmit={handleSubmit}
             >
               Send
             </button>
           </form>
-        </div>
-      </Fade>
+        </Fade>
+      </div>
     </section>
   )
 }
