@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import { ChangeEventHandler } from "react"
 import Fade from "react-reveal/Fade"
+import ContactForm from "../ContactForm"
 
 const Contact = () => {
   const [name, setName] = useState("")
@@ -29,11 +29,8 @@ const Contact = () => {
       }),
     }
 
-    console.log(options)
-
     fetch("/", options)
-      .then(response => {
-        console.log(response)
+      .then(() => {
         window.location.assign("/success/")
       })
       .catch(error => console.log(error))
@@ -55,8 +52,10 @@ const Contact = () => {
           </div>
         </Fade>
 
+        <ContactForm />
+
         <Fade left>
-          <form
+          {/* <form
             className="mx-auto"
             data-netlify="true"
             name="contact"
@@ -119,7 +118,7 @@ const Contact = () => {
             >
               Send
             </button>
-          </form>
+          </form> */}
         </Fade>
       </div>
     </section>
