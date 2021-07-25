@@ -85,4 +85,4 @@ A website makes your information available 24/7. This is great for your customer
 
 As you can see, having a good website makes it easier for people to find you, builds your reputation so first-time customers will be more likely to trust you, and does a lot of marketing and sales work for you so that you can spend more time under the bonnet – increasing your garages revenue.
 
-Feel free to <Link to="/#contact">contact us</Link> to discuss how we can best help your business. Don't be shy!
+Feel free to <Link to="#contact">contact us</Link> to discuss how we can best help your business. Don't be shy!
