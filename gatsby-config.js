@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `AutoSites`,
+    title: `Topline Web Design`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `Dan Adams`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,

@@ -2,7 +2,7 @@ import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 
-// For internal links, use gatsbyLink (pass in gatsbyLinkUrl). For internal links, use anchor tag (pass in href).
+// For internal links, use gatsbyLink (pass in gatsbyLinkUrl). For external links, use anchor tag (pass in href).
 type CardProps = {
   title: string
   paragraph: string
