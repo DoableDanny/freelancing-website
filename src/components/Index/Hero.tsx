@@ -8,7 +8,7 @@ const Hero = () => {
         {/* Left col */}
         <div className="flex flex-col items-center w-full text-center md:text-left md:items-start md:w-2/5">
           <h1 className="text-white font-serif text-5xl lg:text-6xl">
-            Get more clients to your garage
+            Get more clients to your business
           </h1>
           <p className="text-white text-xl lg:text-2xl mt-12">
             Make it easy for people to find you online with a modern
