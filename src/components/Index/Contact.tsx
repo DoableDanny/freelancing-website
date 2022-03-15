@@ -13,8 +13,7 @@ const Contact = () => {
           <div className="text-center">
             <h2 className="text-4xl font-bold mb-8">Contact Us</h2>
             <p className="text-2xl my-4 font-medium mb-8">
-              Feel free to ask us anything. Send us a message below or call us
-              on 01232 765 374
+              Send us a message below, feel free to ask us anything.
             </p>
           </div>
         </Fade>

@@ -15,7 +15,7 @@ const IndexPage = () => {
       <WhatWeDo />
       <OurPortfolio />
       <Testimonials />
-      <OurBlog />
+      {/* <OurBlog /> */}
       <Pricing />
       <Contact />
     </>

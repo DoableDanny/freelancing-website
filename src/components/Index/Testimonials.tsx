@@ -37,7 +37,7 @@ const Testimonials = () => {
             <h2 className="">Testimonials</h2>
             <p className="text-xl font-medium text-gray-500 my-6">
               Don't just take our word for it, read from our extensive list of
-              case studies and customer testimonials.
+              customer testimonials.
             </p>
           </div>
         </Fade>

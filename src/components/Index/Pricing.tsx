@@ -19,39 +19,42 @@ const Pricing = () => {
         <Fade left>
           <div className="flex flex-col md:flex-row justify-center items-center w-11/12 sm:w-full mx-auto">
             <PricingCard
-              title="Basic Plan"
-              price="199"
-              description="A beautifully designed four-page website to give your business a professional image and drive more people to your garage."
-              features={[
-                "4 page website",
-                "Custom colors, text & images",
-                "SEO optimized",
-              ]}
+              title="Basic website"
+              price="399"
+              description="A beautifully designed three-page website to give your business a professional image and drive more people to your garage."
+              features={["3 page website", "Custom design"]}
             />
             <PricingCard
-              title="Pro Plan"
-              price="299"
-              description="Many people today prefer to book online rather than call. Cater for these people with a website with an online booking system."
+              title="Online Shop"
+              price="999"
+              description="Online shop created with Woocommerce -- the well-established WordPress plugin for creating well-designed and secure online stores."
               bannerTitle="MOST POPULAR"
               larger
               features={[
-                "5 page website",
-                "Take bookings online",
-                "Custom colors, text & images",
+                "Sell products on your site",
+                "Custom design",
                 "SEO optimized",
               ]}
             />
             <PricingCard
-              title="Premium Plan"
-              price={`50 / month`}
-              description="Run ads on Google for specific search terms to drive traffic away from your competitors and to your website."
+              title="Hosting/ maintenance"
+              price={`20 / month`}
+              description="Have us host and maintain your website, keeping it up to date, backed up, and secure -- so you can focus on your business."
               features={[
-                "Google ads",
-                "We'll run experiments to optimize your ads",
+                "Hosting",
+                "Theme, plugin & core updates",
+                "Daily site backups",
               ]}
             />
           </div>
         </Fade>
+
+        <div>
+          <p className="md:mt-20 text-center text-gray-600">
+            * Every website is different, but the above prices are good
+            approximations.
+          </p>
+        </div>
       </div>
     </section>
   )
